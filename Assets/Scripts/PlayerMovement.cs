@@ -29,11 +29,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float speedX = playerSpeed * Input.GetAxis(axisY);
-        float speedY = playerSpeed * Input.GetAxis(axisX);
+        float speedY = Input.GetAxisRaw(axisY);
+        float speedX = Input.GetAxisRaw(axisX);
 
-        playerDir = (forward * speedX) + (right * speedY);
+        playerDir = (forward * speedY).normalized + (right * speedX).normalized;
 
-        rb.velocity = new Vector3(playerDir.x, 0, playerDir.z);
+        rb.velocity = new Vector3(playerDir.x * playerSpeed, -5, playerDir.z * playerSpeed);
     }
+
 }

@@ -25,7 +25,7 @@ public class CameraTurn : MonoBehaviour
     void Update()
     {
         rotation.x += Input.GetAxis(xAxis) * sensitivity;
-        rotation.y += Input.GetAxis(yAxis) * sensitivity;
+        rotation.y += Input.GetAxis(yAxis) * -sensitivity;
         rotation.y = Mathf.Clamp(rotation.y, -yRotationLimit, yRotationLimit);
 
         var quatX = Quaternion.AngleAxis(rotation.x, Vector3.up);
