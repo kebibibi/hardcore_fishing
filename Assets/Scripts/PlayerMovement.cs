@@ -32,9 +32,14 @@ public class PlayerMovement : MonoBehaviour
         float speedY = Input.GetAxisRaw(axisY);
         float speedX = Input.GetAxisRaw(axisX);
 
-        playerDir = (forward * speedY).normalized + (right * speedX).normalized;
+        Vector3 dirY = forward * speedY;
+        Vector3 dirX = right * speedX;
 
-        rb.velocity = new Vector3(playerDir.x * playerSpeed, -5, playerDir.z * playerSpeed);
+        playerDir = dirX + dirY;
+
+        Vector3 norPD = playerDir.normalized;
+
+        rb.velocity = new Vector3(norPD.x * playerSpeed, -5, norPD.z * playerSpeed);
     }
 
 }
