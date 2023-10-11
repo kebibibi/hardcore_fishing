@@ -26,8 +26,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        forward = cam.TransformDirection(Vector3.forward);
-        right = cam.TransformDirection(Vector3.right);
+        if(cutscene.cutsceneON == false)
+        {
+            forward = cam.TransformDirection(Vector3.forward);
+            right = cam.TransformDirection(Vector3.right);
+        }
     }
 
     private void FixedUpdate()
