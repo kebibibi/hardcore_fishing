@@ -31,7 +31,13 @@ public class FishMovement : MonoBehaviour
         }
         if (timer < 0)
         {
-            Destroy(gameObject);
+            float fishFall = Mathf.Lerp(transform.position.y, -120, fishSpeed);
+            transform.position = new Vector3(transform.position.x, fishFall, transform.position.z);
+
+            if(transform.position.y < -30)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

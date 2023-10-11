@@ -13,12 +13,15 @@ public class PlayerMovement : MonoBehaviour
     Vector3 right;
     Vector3 playerDir;
 
+    Cutscene cutscene;
+
     const string axisY = "Vertical";
     const string axisX = "Horizontal";
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cutscene = GetComponent<Cutscene>();
     }
 
     void Update()
@@ -29,17 +32,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float speedY = Input.GetAxisRaw(axisY);
-        float speedX = Input.GetAxisRaw(axisX);
+        if(cutscene.cutsceneON == false)
+        {
+            float speedY = Input.GetAxisRaw(axisY);
+            float speedX = Input.GetAxisRaw(axisX);
 
-        Vector3 dirY = forward * speedY;
-        Vector3 dirX = right * speedX;
+            Vector3 dirY = forward * speedY;
+            Vector3 dirX = right * speedX;
 
-        playerDir = dirX + dirY;
+            playerDir = dirX + dirY;
 
-        Vector3 norPD = playerDir.normalized;
+            Vector3 norPD = playerDir.normalized;
 
-        rb.velocity = new Vector3(norPD.x * playerSpeed, -5, norPD.z * playerSpeed);
+            rb.velocity = new Vector3(norPD.x * playerSpeed, -5, norPD.z * playerSpeed);
+        }
     }
 
 }

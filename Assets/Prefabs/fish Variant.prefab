@@ -103,7 +103,8 @@ MonoBehaviour:
   randomZ: 0
   randomY: 0
   fishSpeed: 0.01
-  timer: 6
+  timer: 3.2
+  maxTimer: 3.8
   randomDest: {x: 0, y: 0, z: 0}
 --- !u!65 &8161534204783023345
 BoxCollider:
