@@ -23,7 +23,7 @@ public class FishMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position =  Vector3.Lerp(transform.position, randomDest, fishSpeed);
+        transform.position = Vector3.Lerp(transform.position, randomDest, fishSpeed);
 
         if (timer > 0)
         {
