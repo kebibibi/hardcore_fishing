@@ -14,6 +14,8 @@ public class CameraTurn : MonoBehaviour
 
     Vector2 rotation = Vector2.zero;
 
+    public Cutscene cutscene;
+
     const string xAxis = "Mouse X";
     const string yAxis = "Mouse Y";
 
@@ -24,13 +26,16 @@ public class CameraTurn : MonoBehaviour
 
     void Update()
     {
-        rotation.x += Input.GetAxis(xAxis) * sensitivity;
-        rotation.y += Input.GetAxis(yAxis) * -sensitivity;
-        rotation.y = Mathf.Clamp(rotation.y, -yRotationLimit, yRotationLimit);
+        if(cutscene.cutsceneON == false)
+        {
+            rotation.x += Input.GetAxis(xAxis) * sensitivity;
+            rotation.y += Input.GetAxis(yAxis) * -sensitivity;
+            rotation.y = Mathf.Clamp(rotation.y, -yRotationLimit, yRotationLimit);
 
-        var quatX = Quaternion.AngleAxis(rotation.x, Vector3.up);
-        var quatY = Quaternion.AngleAxis(rotation.y, Vector3.right);
+            var quatX = Quaternion.AngleAxis(rotation.x, Vector3.up);
+            var quatY = Quaternion.AngleAxis(rotation.y, Vector3.right);
 
-        transform.localRotation = quatX * quatY;
+            transform.localRotation = quatX * quatY;
+        }
     }
 }
