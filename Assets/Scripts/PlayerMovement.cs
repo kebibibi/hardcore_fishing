@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     public float gravity;
 
+    public GameObject player;
+
     Vector3 forward;
     Vector3 right;
     Vector3 playerDir;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        player.SetActive(false);
         rb = GetComponent<Rigidbody>();
         cutscene = GetComponent<Cutscene>();
         cutsceneCam.SetActive(false);
