@@ -40,6 +40,7 @@ public class Bucket : MonoBehaviour
         if(fishCount >= 10 && hookToPlayer.magnitude > 9)
         {
             transform.position = bucketHook;
+            transform.eulerAngles = new Vector3(0, 0, 0);
             door.SetActive(true);
         }
     }

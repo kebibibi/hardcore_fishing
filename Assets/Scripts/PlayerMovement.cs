@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     public Transform cam;
+    public GameObject cutsceneCam;
 
     public float playerSpeed;
     public float gravity;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cutscene = GetComponent<Cutscene>();
+        cutsceneCam.SetActive(false);
     }
 
     void Update()

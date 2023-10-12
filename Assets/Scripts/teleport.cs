@@ -5,6 +5,7 @@ using UnityEngine;
 public class teleport : MonoBehaviour
 {
     public Transform ovi;
+    public Camera main;
     PlayerMovement player;
 
     Cutscene cutscene;
@@ -30,6 +31,7 @@ public class teleport : MonoBehaviour
                 transform.position = huoneAlku;
                 player.playerSpeed = 50;
                 player.gravity = -30;
+                main.fieldOfView = 90;
             }
         }
     }
