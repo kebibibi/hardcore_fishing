@@ -18,6 +18,9 @@ public class Cutscene : MonoBehaviour
     public Transform isokalapää;
     public Transform point;
 
+    public AudioSource ass;
+    public AudioClip clip;
+
     public float startDistance;
     public float speed;
 
@@ -90,6 +93,8 @@ public class Cutscene : MonoBehaviour
             }
             if (timer1 < 0)
             {
+                ass.clip = clip;
+                ass.Play();
                 Vector3 isokalaPoint = new Vector3(2.4f, -60f, 377f);
                 isokala.transform.position = Vector3.Lerp(isokala.transform.position, isokalaPoint, 1);
 
@@ -108,6 +113,7 @@ public class Cutscene : MonoBehaviour
 
                 if(timer2 < 0)
                 {
+                    ass.Stop();
                     isokala.SetActive(false);
                     pikkukala.SetActive(true);
 
