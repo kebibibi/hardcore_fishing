@@ -9,6 +9,7 @@ public class Rod : MonoBehaviour
     public Ladder ladder;
     public AttackingFish fish;
 
+
     public AudioSource audi;
 
     Vector3 onHandPos;
@@ -76,6 +77,7 @@ public class Rod : MonoBehaviour
         {
             fish = other.gameObject.GetComponent<AttackingFish>();
             fish.fishHealth--;
+
         }
     }
 
