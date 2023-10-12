@@ -9892,6 +9892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onki Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7343827924558679558, guid: d3b795062c778433da7ff9ad695f1fb7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9067525722133248730, guid: d3b795062c778433da7ff9ad695f1fb7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10334,6 +10338,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89a49c30d27b4f64a320880ac88b10c, type: 3}
+--- !u!114 &1634618383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7563110095745579194, guid: c72602334fc3b4b13aae086ac18df1bb, type: 3}
+  m_PrefabInstance: {fileID: 8089514033515274080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89aeecf085034268b026ca04758b96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1639915335
 GameObject:
   m_ObjectHideFlags: 0
@@ -10512,8 +10527,9 @@ MonoBehaviour:
   player: {fileID: 1997998136}
   cam: {fileID: 963194228}
   ladder: {fileID: 1997998141}
-  timer: 0.4
-  maxTimer: 0.4
+  fish: {fileID: 1634618383}
+  timer: 0.3
+  maxTimer: 0.3
   onHand: 0
 --- !u!65 &1646283166
 BoxCollider:
@@ -10531,7 +10547,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10.4407215, y: 15.05835, z: 70.42544}
@@ -12508,12 +12524,12 @@ GameObject:
   - component: {fileID: 1997998131}
   - component: {fileID: 1997998137}
   - component: {fileID: 1997998138}
-  - component: {fileID: 1997998139}
   - component: {fileID: 1997998140}
   - component: {fileID: 1997998141}
+  - component: {fileID: 1997998139}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12724,8 +12740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  invTimer: 1
-  maxInv: 1
   goingUp: 0
 --- !u!114 &1997998141
 MonoBehaviour:
@@ -13850,10 +13864,30 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 6573553585034087263, guid: c72602334fc3b4b13aae086ac18df1bb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563110095745579194, guid: c72602334fc3b4b13aae086ac18df1bb, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1997998140}
+    - target: {fileID: 7563110095745579194, guid: c72602334fc3b4b13aae086ac18df1bb, type: 3}
+      propertyPath: maxInv
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7563110095745579194, guid: c72602334fc3b4b13aae086ac18df1bb, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1997998136}
+    - target: {fileID: 7563110095745579194, guid: c72602334fc3b4b13aae086ac18df1bb, type: 3}
+      propertyPath: invTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563110095745579194, guid: c72602334fc3b4b13aae086ac18df1bb, type: 3}
+      propertyPath: fishHealth
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

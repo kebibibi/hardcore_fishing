@@ -7,6 +7,7 @@ public class Rod : MonoBehaviour
     public Transform player;
     public Transform cam;
     public Ladder ladder;
+    public AttackingFish fish;
 
     Vector3 onHandPos;
     Vector3 attack = new Vector3(0.565f, -0.5f, 1.655f);
@@ -63,6 +64,14 @@ public class Rod : MonoBehaviour
             }
             else
                 return;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(attackOn && other.gameObject.CompareTag("Fish"))
+        {
+            fish.fishHealth--;
         }
     }
 }
