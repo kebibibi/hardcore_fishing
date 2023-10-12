@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform cam;
 
     public float playerSpeed;
+    public float gravity;
 
     Vector3 forward;
     Vector3 right;
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 norPD = playerDir.normalized;
 
-            rb.velocity = new Vector3(norPD.x * playerSpeed, -5, norPD.z * playerSpeed);
+            rb.velocity = new Vector3(norPD.x * playerSpeed, gravity, norPD.z * playerSpeed);
         }
     }
 

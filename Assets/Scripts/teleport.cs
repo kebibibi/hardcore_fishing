@@ -5,6 +5,7 @@ using UnityEngine;
 public class teleport : MonoBehaviour
 {
     public Transform ovi;
+    PlayerMovement player;
 
     Cutscene cutscene;
 
@@ -13,6 +14,7 @@ public class teleport : MonoBehaviour
     private void Start()
     {
         cutscene = GetComponent<Cutscene>();
+        player = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -21,11 +23,13 @@ public class teleport : MonoBehaviour
         {
             Vector3 doorDir = transform.position - ovi.position;
 
-            Vector3 huoneAlku = new Vector3(-60, 5, -885);
+            Vector3 huoneAlku = new Vector3(-50, 5, -905);
 
             if (doorDir.magnitude < distance)
             {
                 transform.position = huoneAlku;
+                player.playerSpeed = 50;
+                player.gravity = -30;
             }
         }
     }

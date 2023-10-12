@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public float invTimer;
     public float maxInv;
 
+    public bool goingUp;
+
     void Start()
     {
         health = 10;
