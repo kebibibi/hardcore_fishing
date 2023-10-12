@@ -9,5 +9,6 @@ public class DisableMenu : MonoBehaviour
     public void DisableMenuFunc()
     {
         menu.SetActive(false);
+        Cursor.visible = false;
     }
 }

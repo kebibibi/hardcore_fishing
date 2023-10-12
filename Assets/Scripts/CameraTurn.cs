@@ -19,11 +19,6 @@ public class CameraTurn : MonoBehaviour
     const string xAxis = "Mouse X";
     const string yAxis = "Mouse Y";
 
-    private void Start()
-    {
-        Cursor.visible = false;
-    }
-
     void Update()
     {
         if(cutscene.cutsceneON == false)
