@@ -26,7 +26,7 @@ public class Ladder : MonoBehaviour
             float up = Mathf.Lerp(transform.position.y, 100, 0.1f * Time.deltaTime);
             transform.position = new Vector3(transform.position.x, up, transform.position.z);
 
-            if(transform.position.y > 49)
+            if(transform.position.y > 33)
             {
                 goingUp = false;
             }

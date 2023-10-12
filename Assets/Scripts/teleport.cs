@@ -23,7 +23,7 @@ public class teleport : MonoBehaviour
         {
             Vector3 doorDir = transform.position - ovi.position;
 
-            Vector3 huoneAlku = new Vector3(-50, 5, -905);
+            Vector3 huoneAlku = new Vector3(-38, 5, -935);
 
             if (doorDir.magnitude < distance)
             {

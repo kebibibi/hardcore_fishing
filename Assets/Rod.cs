@@ -71,7 +71,29 @@ public class Rod : MonoBehaviour
     {
         if(attackOn && other.gameObject.CompareTag("Fish"))
         {
+            fish = other.gameObject.GetComponent<AttackingFish>();
             fish.fishHealth--;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (attackOn && other.gameObject.CompareTag("Fish"))
+        {
+            if (timer >= 0)
+            {
+                transform.localPosition = attack;
+                timer -= Time.deltaTime;
+                if (timer < 0)
+                {
+                    fish = other.gameObject.GetComponent<AttackingFish>();
+                    fish.fishHealth--;
+                    transform.localPosition = onHandPos;
+                    timer = maxTimer;
+                    attackOn = false;
+                }
+            }
+            
         }
     }
 }
