@@ -9,7 +9,6 @@ public class Rod : MonoBehaviour
     public Ladder ladder;
     public AttackingFish fish;
 
-    ParticleSystem ps;
 
     public AudioSource audi;
 
@@ -20,11 +19,6 @@ public class Rod : MonoBehaviour
     public float maxTimer;
     public bool onHand;
     bool attackOn;
-
-    private void Start()
-    {
-        ps = GetComponent<ParticleSystem>();
-    }
 
     void Update()
     {
@@ -45,7 +39,7 @@ public class Rod : MonoBehaviour
             onHandPos = new Vector3(0.6f, -0.5f, 1);
             transform.localPosition = onHandPos;
 
-            transform.localEulerAngles = new Vector3(286, 150, 19);
+            transform.localEulerAngles = new Vector3(180, -3, -175);
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -83,7 +77,7 @@ public class Rod : MonoBehaviour
         {
             fish = other.gameObject.GetComponent<AttackingFish>();
             fish.fishHealth--;
-            ps.Play();
+
         }
     }
 
@@ -91,7 +85,6 @@ public class Rod : MonoBehaviour
     {
         if (attackOn && other.gameObject.CompareTag("Fish"))
         {
-            ps.Play();
             if (timer >= 0)
             {
                 transform.localPosition = attack;
