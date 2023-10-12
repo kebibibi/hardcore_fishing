@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float health;
-    public float invTimer;
-    public float maxInv;
+
+    public bool goingUp;
 
     void Start()
     {
@@ -18,39 +18,6 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             this.gameObject.SetActive(false);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Fish"))
-        {
-            health--;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Fish"))
-        {
-            if (invTimer > 0)
-            {
-                invTimer -= Time.deltaTime;
-
-                if (invTimer <= 0)
-                {
-                    health--;
-                    invTimer = maxInv;
-                }
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Fish"))
-        {
-            invTimer = maxInv;
         }
     }
 }

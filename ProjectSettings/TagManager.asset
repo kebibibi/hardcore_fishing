@@ -7,14 +7,16 @@ TagManager:
   - Slope
   - Destination
   - Deck
+  - Fish
+  - Tikkaat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Onki
   - Water
   - UI
-  - 
+  - Fish
   - 
   - 
   - 
