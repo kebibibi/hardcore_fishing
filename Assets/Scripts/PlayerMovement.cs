@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
 
     public GameObject player;
+    public GameObject hahmo;
 
     Vector3 forward;
     Vector3 right;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         cutscene = GetComponent<Cutscene>();
         cutsceneCam.SetActive(false);
         Cursor.visible = false;
+        hahmo.SetActive(false);
     }
 
     void Update()
