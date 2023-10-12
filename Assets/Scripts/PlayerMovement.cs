@@ -24,10 +24,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        player.SetActive(false);
         rb = GetComponent<Rigidbody>();
         cutscene = GetComponent<Cutscene>();
         cutsceneCam.SetActive(false);
+        Cursor.visible = false;
     }
 
     void Update()
