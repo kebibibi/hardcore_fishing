@@ -9,6 +9,8 @@ public class Rod : MonoBehaviour
     public Ladder ladder;
     public AttackingFish fish;
 
+    public AudioSource audi;
+
     Vector3 onHandPos;
     Vector3 attack = new Vector3(0.565f, -0.5f, 1.655f);
 
@@ -41,6 +43,7 @@ public class Rod : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 attackOn = true;
+                audi.Play();
             }
 
             if (attackOn)
