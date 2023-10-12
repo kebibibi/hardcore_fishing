@@ -9,7 +9,7 @@ public class Rod : MonoBehaviour
     public Ladder ladder;
     public AttackingFish fish;
 
-    ParticleSystem ps;
+    public ParticleSystem ps;
 
     public AudioSource audi;
 
@@ -20,11 +20,6 @@ public class Rod : MonoBehaviour
     public float maxTimer;
     public bool onHand;
     bool attackOn;
-
-    private void Start()
-    {
-        ps = GetComponent<ParticleSystem>();
-    }
 
     void Update()
     {
