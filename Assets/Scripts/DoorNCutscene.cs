@@ -11,7 +11,7 @@ public class DoorNCutscene : MonoBehaviour
     {
         Vector3 winDis = transform.position - player.position;
 
-        if(winDis.magnitude < 3)
+        if(winDis.magnitude < 7)
         {
             endScene.SetActive(true);
         }
