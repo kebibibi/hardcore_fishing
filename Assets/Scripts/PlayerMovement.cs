@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         cutscene = GetComponent<Cutscene>();
         cutsceneCam.SetActive(false);
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
         hahmo.SetActive(false);
     }
 
