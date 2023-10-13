@@ -9,10 +9,8 @@ public class Rod : MonoBehaviour
     public Ladder ladder;
     public AttackingFish fish;
 
-<<<<<<< HEAD
     public ParticleSystem ps;
-=======
->>>>>>> 378c6bd7338bfce7ef3ba10f0bc36d6fb44933f6
+
 
     public AudioSource audi;
 

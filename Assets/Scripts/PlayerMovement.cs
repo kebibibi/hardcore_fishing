@@ -57,6 +57,11 @@ public class PlayerMovement : MonoBehaviour
 
             rb.velocity = new Vector3(norPD.x * playerSpeed, gravity, norPD.z * playerSpeed);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
 }
